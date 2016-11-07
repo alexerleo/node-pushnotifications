@@ -51,11 +51,11 @@ module.exports = (regIds, data, settings) => {
     const message = new gcm.Message({ // See https://developers.google.com/cloud-messaging/http-server-ref#table5
         collapseKey: data.collapseKey,
         priority: data.priority,
-        contentAvailable: data.contentAvailable || false,
-        delayWhileIdle: data.delayWhileIdle || false,
+        contentAvailable: !!data.contentAvailable,
+        delayWhileIdle: !!data.delayWhileIdle,
         timeToLive: data.expiry - Math.floor(Date.now() / 1000) || data.timeToLive || 28 * 86400,
         restrictedPackageName: data.restrictedPackageName,
-        dryRun: data.dryRun || false,
+        dryRun: !!data.dryRun,
         data: data.custom,
         notification: {
             title: data.title, // Android, iOS (Watch)
