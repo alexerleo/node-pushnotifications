@@ -57,7 +57,7 @@ module.exports = (regIds, data, settings) => {
         restrictedPackageName: data.restrictedPackageName,
         dryRun: !!data.dryRun,
         data: data.custom,
-        notification: {
+        /*notification: {
             title: data.title, // Android, iOS (Watch)
             body: data.body, // Android, iOS
             icon: data.icon, // Android
@@ -70,7 +70,7 @@ module.exports = (regIds, data, settings) => {
             body_loc_args: data.locArgs, // Android, iOS
             title_loc_key: data.titleLocKey, // Android, iOS
             title_loc_args: data.titleLocArgs, // Android, iOS
-        },
+        },*/
     });
     let chunk = 0;
 
